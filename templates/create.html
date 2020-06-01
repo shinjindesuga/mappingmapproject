@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+<style>
+  #title{
+    width: 300px;
+  }
+  #content{
+    width: 400px;
+    height: 400px;
+  }
+</style>
+{% endblock customcss %}
+
+{% block content %}
+<div class="container mt-3">
+  <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <p>タイトル</p>
+    <p><input type='text' name='title' id='title'></p>
+    <p>内容</p>
+    <p><input type='content' name='content' id='content'></p>
+    <p><input type='file' name='image'></p>
+    <input type="submit" value="投稿する">
+  </form>
+  <p class="mt-3"><a href="{% url 'list' %}" >ホームに戻る</a></p>
+</div>
+
+
+
+{% endblock content %}

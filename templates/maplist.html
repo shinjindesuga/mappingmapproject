@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block customcss %}
+{% endblock customcss %}
+
+{% block header %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light pt-2 pd-0">
+  <a class="navbar-brand" href=""><img src="{% static "img/mappingmap_logo.png" %}" width="120" height="40"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'list' %}">ホーム<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">マイページ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'create' %}">投稿する</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">ログアウト</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+{% endblock header %}
+
+{% block content %}
+
+  <div class="d-flex justify-content-center">
+    <div class="m-3">
+      {% for item in object_list %}
+      <div class="d-flex justify-content-center">
+        <div class="border border-secondary rounded m-4">
+          <a href = "{% url 'detail' item.pk %}"><p class="mt-2 mb-2 text-dark">{{item.title}}</p></a>
+          <p class="mb-0"><a href = "{% url 'detail' item.pk %}"><img src='{{item.image.url}}'width=600></a></p>
+        </div>
+        <div class=></div>
+      </div>
+  {% endfor %}
+    </div>
+  </div>
+
+{% endblock content %}
+
+
+
+
+
