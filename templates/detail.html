@@ -36,12 +36,17 @@
   <div class="d-sm-none">
     <h4 class="m-3">{{ object.title }}</h4>
     <p class="m-3">内容：{{ object.content }}</p>
-    <p class="mt-4"><a href = "{{object.image.url}}"><img src='{{object.image.url}}'width=900></a></p>
+    <p class="mt-4"><a href = "{{object.image.url}}"><img src='{{object.image.url}}'width=350></a></p>
   </div>
-  <div class="d-none d-sm-block">
+  <div class="d-none d-lg-block">
     <h4 class="m-3">{{ object.title }}</h4>
     <p class="m-3">内容：{{ object.content }}</p>
-    <p class="mt-4"><a href = "{{object.image.url}}"><img src='{{object.image.url}}'width=350></a></p>
+    <p class="mt-4"><a href = "{{object.image.url}}"><img src='{{object.image.url}}'width=900></a></p>
+  </div>
+  <div class="d-none d-sm-block d-lg-none">
+    <h4 class="m-3">{{ object.title }}</h4>
+    <p class="m-3">内容：{{ object.content }}</p>
+    <p class="mt-4"><a href = "{{object.image.url}}"><img src='{{object.image.url}}'width=600></a></p>
   </div>
 </div>
 {% endblock content %}
