@@ -25,7 +25,7 @@ SECRET_KEY = 's1e1!(p(7s!uv+yzl%eww36*mbt!(g706@i6@+9-x@3=!7&h86'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['18.180.173.39']
 
 
 # Application definition
@@ -76,8 +76,14 @@ WSGI_APPLICATION = 'mappingmapproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#        'ENGINE': 'django.db.backends.sqlite3',
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+          'NAME': 'mappingmap',
+          'USER': 'koki',
+          'PASSWORD': 'Geco5803',
+          'HOST': 'localhost',
+          'PORT': '',
     }
 }
 
