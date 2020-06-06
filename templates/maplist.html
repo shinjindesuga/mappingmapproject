@@ -42,7 +42,7 @@
       <div class="d-flex justify-content-center">
         <div class="border border-secondary rounded m-4">
           <a href = "{% url 'detail' item.pk %}"><p class="mt-2 mb-2 text-dark">{{item.title}}</p></a>
-          <p class="mb-0"><a href = "{% url 'detail' item.pk %}"><img src='{{item.image.url}}'width=450></a></p>
+          <p class="mb-0"><a href = "{% url 'detail' item.pk %}"><img src='{{item.image.url}}'width=350></a></p>
         </div>
         <div class=></div>
       </div>
@@ -63,6 +63,8 @@
   {% endfor %}
     </div>
   </div>
+
+  
 
 {% endblock content %}
 
