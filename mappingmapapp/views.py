@@ -36,7 +36,7 @@ def loginfunc(request):
   else:
     return render(request, 'login.html')
 
-class MapList(LoginRequiredMixin, ListView):
+class MapList(ListView):
   template_name = 'maplist.html'
   model = MapModel
 
@@ -48,7 +48,7 @@ class MapDetail(DetailView):
   template_name = 'detail.html'
   model = MapModel
 
-class MapCreate(CreateView):
+class MapCreate(LoginRequiredMixin, CreateView):
   template_name = 'create.html'
   model = MapModel
   fields = ('title','content', 'image')
